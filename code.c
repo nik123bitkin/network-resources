@@ -44,12 +44,10 @@ BOOL WINAPI enumerateResources(LPNETRESOURCE lpnr, FILE *errFile, DWORD dwNestin
     //free memory and call CloseEnum to finish enumeration
     GlobalFree((HGLOBAL)lpnrLocal);
     dwErrLog = WNetCloseEnum(hEnum);
-
     if (dwErrLog != NO_ERROR) {
 	throwError(errFile, "WNetCloseEnum failed with error %d\n", dwErrLog);
         return FALSE;
     }
-
     return TRUE;
 }
 
@@ -89,7 +87,7 @@ void showData(LPNETRESOURCE lpnrLocal, DWORD dwNesting)
         printf("unknown %X", lpnrLocal->dwDisplayType);
         break;
     }
-	printf("\n");
+    printf("\n");
 
     printf("  Display type:    ");
     switch (lpnrLocal->dwDisplayType) {
