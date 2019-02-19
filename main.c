@@ -2,7 +2,7 @@
 
 int main()
 {
-	LPNETRESOURCE lpnr = NULL;
+    LPNETRESOURCE lpnr = NULL;
     if (!enumerateResources(lpnr, NULL, 0)) {
         printf("Call to enumerateResources function failed");
     }
